@@ -14,11 +14,36 @@
   --font__secondary: 'Raleway';
 }
 
+/* Reset */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+ul {
+  margin: 0;
+  padding-left: 0;
+}
+
 body {
   font-family: var(--font__primary, 'Arial', sans-serif);
   color: var(--color__slate);
   background-color: var(--color__white);
   font-size: 16px;
+}
+.container {
+  width: 100%;
+  max-width: 1158px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+}
+.section {
+  padding-top: 120px;
 }
 
 /* hidden elements class */
@@ -39,7 +64,13 @@ body {
 .header {
   border-bottom: 1px solid var(--color__cornflower);
 }
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .header__logo {
+  margin-right: 76px;
   font-family: var(--font__secondary, 'Arial', sans-serif);
   font-weight: 800;
   font-size: 18px;
@@ -53,9 +84,19 @@ body {
   color: var(--color__iris);
 }
 .menu {
+  display: inline-flex;
   list-style: none;
 }
+.menu__list {
+  margin-right: 40px;
+}
+.menu__list:last-child {
+  margin-right: 0;
+}
 .menu__list-text {
+  display: inline-block;
+  padding-top: 24px;
+  padding-bottom: 24px;
   font-weight: 500;
   line-height: 1.33;
   letter-spacing: 0.02em;
@@ -70,14 +111,21 @@ body {
   color: var(--color__iris);
 }
 .address {
+  display: flex;
   list-style: none;
+}
+.address__link {
+  margin-right: 40px;
+}
+.address__link:last-child {
+  margin-right: 0;
 }
 .address__link-text {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--color__slate);
   text-decoration: none;
-  font-style: normal; /* because of default for a href="mail/telto: is italic */
+  font-style: normal;
 }
 .address__link-text:hover,
 .address__link-text:focus {
@@ -86,9 +134,12 @@ body {
 
 /* Footer */
 .footer {
+  padding-top: 100px;
+  padding-bottom: 100px;
   background-color: var(--color__navy-blue);
 }
 .footer__logo {
+  margin-bottom: 16px;
   font-family: var(--font__secondary, 'Arial', sans-serif);
   font-weight: 800;
   font-size: 18px;
@@ -102,6 +153,7 @@ body {
   color: var(--color__iris);
 }
 .footer__text {
+  width: 264px;
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--color__cornflower);
@@ -109,9 +161,13 @@ body {
 
 /* Main section */
 .main-section {
+  padding-top: 188px;
+  padding-bottom: 188px;
   background-color: var(--color__navy-blue);
 }
 .main-section__title {
+  width: 500px;
+  margin: 0 auto 48px auto;
   font-weight: 700;
   font-size: 56px;
   line-height: 1.07;
@@ -120,6 +176,8 @@ body {
   color: var(--color__white);
 }
 .main-section__button {
+  display: block;
+  margin: 0 auto;
   background-color: var(--color__iris);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
@@ -145,9 +203,20 @@ body {
 
 /* Features section */
 .features {
+  display: flex;
   list-style: none;
 }
+.features__item {
+  margin-right: 24px;
+}
+.features__item:last-child {
+  margin-right: 0;
+}
+.features__item:last-child {
+  margin-right: 0;
+}
 .features__title {
+  margin-bottom: 8px;
   font-weight: 500;
   font-size: 20px;
   line-height: 1.2;
@@ -155,12 +224,19 @@ body {
   color: var(--color__navy-blue);
 }
 .features__text {
+  width: 264px; /*  otherwise, all blocks will be with different sizes, 
+                    not per Figma */
   line-height: 1.5;
   letter-spacing: 0.02em;
+  font-size: 16px;
 }
 
 /* What are we doing */
+.our-work {
+  padding-bottom: 120px;
+}
 .our-work__title {
+  margin-bottom: 72px;
   font-weight: 700;
   font-size: 36px;
   line-height: 1.11;
@@ -170,14 +246,21 @@ body {
   color: var(--color__navy-blue);
 }
 .our-work__list {
+  display: flex;
+  justify-content: space-between;
   list-style: none;
+}
+.our-work__image {
+  display: block;
 }
 
 /* Our team */
 .our-team {
+  padding-bottom: 120px;
   background-color: var(--color__cloud);
 }
 .our-team__title {
+  margin-bottom: 72px;
   font-weight: 700;
   font-size: 36px;
   line-height: 1.11;
@@ -187,16 +270,19 @@ body {
   color: var(--color__navy-blue);
 }
 .our-team__list {
+  display: flex;
+  justify-content: space-between;
   list-style: none;
 }
-.our-team__items {
-  width: 264px;
+.our-team__item {
+  margin-right: 24px;
   background-color: var(--color__white);
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16),
     0px 2px 1px rgba(46, 47, 66, 0.08);
   border-radius: 0px 0px 4px 4px;
 }
 .our-team__subtitle {
+  margin-bottom: 8px;
   font-weight: 500;
   font-size: 20px;
   line-height: 1.2;
@@ -205,9 +291,14 @@ body {
   color: var(--color__navy-blue);
 }
 .our-team__text {
+  margin-bottom: 32px;
   line-height: 1.5;
   text-align: center;
   letter-spacing: 0.02em;
+}
+.our-team__image {
+  display: block;
+  margin-bottom: 32px;
 }
 
 /* Portfolio */
