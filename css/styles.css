@@ -24,9 +24,26 @@ h6,
 p {
   margin: 0;
 }
-ul {
+img {
+  display: block;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+}
+button {
+  display: block;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+}
+ul,
+ol {
+  list-style: none;
   margin: 0;
   padding-left: 0;
+}
+a {
+  text-decoration: none;
 }
 
 body {
@@ -66,7 +83,6 @@ body {
 }
 .header .container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 .header__logo {
@@ -77,7 +93,6 @@ body {
   line-height: 1.33;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  text-decoration: none;
   color: var(--color__navy-blue);
 }
 .header__logo--iris {
@@ -85,7 +100,6 @@ body {
 }
 .menu {
   display: inline-flex;
-  list-style: none;
 }
 .menu__list {
   margin-right: 40px;
@@ -101,7 +115,6 @@ body {
   line-height: 1.33;
   letter-spacing: 0.02em;
   color: var(--color__navy-blue);
-  text-decoration: none;
 }
 .menu__list-text:hover,
 .menu__list-text:focus {
@@ -111,8 +124,10 @@ body {
   color: var(--color__iris);
 }
 .address {
+  margin-left: auto;
+}
+.address__list {
   display: flex;
-  list-style: none;
 }
 .address__link {
   margin-right: 40px;
@@ -124,7 +139,6 @@ body {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--color__slate);
-  text-decoration: none;
   font-style: normal;
 }
 .address__link-text:hover,
@@ -147,7 +161,6 @@ body {
   line-height: 1.33;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  text-decoration: none;
   color: var(--color__cloud);
 }
 .footer__logo--iris {
@@ -177,19 +190,15 @@ body {
   color: var(--color__white);
 }
 .main-section__button {
-  display: block;
   margin: 0 auto;
   background-color: var(--color__iris);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  border-radius: 4px;
   border-color: transparent;
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.04em;
   color: var(--color__white);
-  width: 169px;
-  height: 56px;
-  cursor: pointer;
+  padding: 16px 32px;
   font-family: inherit;
   font-size: 16px;
 }
@@ -205,7 +214,6 @@ body {
 /* Features section */
 .features {
   display: flex;
-  list-style: none;
 }
 .features__item {
   margin-right: 24px;
@@ -249,10 +257,6 @@ body {
 .our-work__list {
   display: flex;
   justify-content: space-between;
-  list-style: none;
-}
-.our-work__image {
-  display: block;
 }
 
 /* Our team */
@@ -272,11 +276,9 @@ body {
 }
 .our-team__list {
   display: flex;
-  justify-content: space-between;
-  list-style: none;
+  gap: 24px;
 }
 .our-team__item {
-  margin-right: 24px;
   background-color: var(--color__white);
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16),
     0px 2px 1px rgba(46, 47, 66, 0.08);
@@ -292,19 +294,18 @@ body {
   color: var(--color__navy-blue);
 }
 .our-team__text {
-  margin-bottom: 32px;
   line-height: 1.5;
   text-align: center;
   letter-spacing: 0.02em;
 }
-.our-team__image {
-  display: block;
-  margin-bottom: 32px;
+.our-team__wrapper {
+  padding-top: 32px;
+  padding-bottom: 32px;
 }
 
 /* Portfolio */
 .portfolio {
-  padding-top: 108px;
+  padding-top: 96px;
   padding-bottom: 120px;
 }
 .filter {
@@ -312,21 +313,16 @@ body {
   gap: 24px;
   margin-bottom: 72px;
   justify-content: center;
-  list-style: none;
 }
 .filter__button {
   box-sizing: border-box;
   background-color: var(--color__cloud);
-  border: 1px solid var(--color__cornflower);
-  border-radius: 4px;
   font-weight: 500;
   line-height: 1.5;
   text-align: center;
   letter-spacing: 0.04em;
   color: var(--color__iris);
-  width: 116px;
-  height: 48px;
-  cursor: pointer;
+  padding: 12px 24px;
   font-family: inherit;
   font-size: 16px;
 }
@@ -343,15 +339,12 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 48px 24px;
-  list-style: none;
 }
 .portfolio__item {
-  border: 1px solid var(--color__cornflower);
   width: 360px;
 }
 .portfolio__subtitle {
   margin-bottom: 8px;
-  padding-left: 16px;
   font-weight: 500;
   font-size: 20px;
   line-height: 1.2;
@@ -363,8 +356,6 @@ body {
   color: var(--color__ocean);
 }
 .portfolio__text {
-  padding-left: 16px;
-  padding-bottom: 32px;
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--color__slate);
@@ -373,10 +364,9 @@ body {
 .portfolio__text:focus {
   color: var(--color__ocean);
 }
-.portfolio__link {
-  text-decoration: none;
-}
-.portfolio__image {
-  display: block;
-  margin-bottom: 32px;
+.portfolio__wrapper {
+  padding: 32px 16px;
+  border-right: 1px solid var(--color__cornflower);
+  border-bottom: 1px solid var(--color__cornflower);
+  border-left: 1px solid var(--color__cornflower);
 }
