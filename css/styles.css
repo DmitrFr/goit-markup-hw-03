@@ -177,7 +177,15 @@ body {
 .main-section {
   padding-top: 188px;
   padding-bottom: 188px;
-  background-color: var(--color__navy-blue);
+  background-image: linear-gradient(
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url(../images/people.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  max-width: 1440px;
+  max-height: 600px;
 }
 .main-section__title {
   width: 500px;
